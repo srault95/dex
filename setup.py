@@ -35,5 +35,5 @@ setup(
       scripts=['bin/dex'],
       url='https://github.com/mongolab/dex',
       license='MIT',
-      install_requires=["pymongo", "pyyaml", "dargparse>=0.2.2","ordereddict"]
+      install_requires=["pymongo", "pyyaml", "ordereddict"]
       )

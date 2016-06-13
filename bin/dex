@@ -24,7 +24,7 @@
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ################################################################################
 
-from dargparse import dargparse
+from dex import dargparse
 import sys
 import traceback
 from dex import dex
