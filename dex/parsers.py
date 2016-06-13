@@ -1,10 +1,9 @@
 __author__ = 'eric'
 
 import re
-from utils import pretty_json, small_json, yamlfy
+from .utils import small_json, yamlfy
 from time import strptime, mktime
 from datetime import datetime
-import traceback
 
 try:
     from collections import OrderedDict

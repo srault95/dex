@@ -22,7 +22,7 @@
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ################################################################################
 
-from distutils.core import setup
+from setuptools import setup
 
 setup(
       name='Dex',
@@ -32,8 +32,13 @@ setup(
       description='Index and query analyzer for MongoDB',
       long_description="Compares MongoDB log files and index entries to make index recommendations",
       packages=['dex', 'dex.test'],
-      scripts=['bin/dex'],
+      #scripts=['bin/dex'],
       url='https://github.com/mongolab/dex',
       license='MIT',
-      install_requires=["pymongo", "pyyaml", "ordereddict", "six"]
+      install_requires=["pymongo", "pyyaml", "ordereddict", "six"],
+      entry_points={
+        'console_scripts': [
+          'dex = dex.core:main',
+        ],
+      },
       )

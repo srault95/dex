@@ -1,7 +1,6 @@
 __author__ = 'eric'
 
-from utils import pretty_json, validate_yaml
-import sys
+from .utils import validate_yaml
 import pymongo
 try:
     from collections import OrderedDict

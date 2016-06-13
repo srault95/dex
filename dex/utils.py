@@ -2,7 +2,6 @@ __author__ = 'eric'
 
 import json
 from bson import json_util
-import yaml
 import yaml.constructor
 from datetime import datetime, date
 

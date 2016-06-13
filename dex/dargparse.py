@@ -25,9 +25,6 @@
 
 __author__ = 'abdul'
 
-import types
-import sys
-
 from argparse import ArgumentParser
 from argparse import ArgumentError
 from argparse import HelpFormatter

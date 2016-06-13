@@ -22,15 +22,15 @@
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ################################################################################
 
-import pymongo
-import sys
-import time
-from utils import pretty_json
-from analyzer import QueryAnalyzer, ReportAggregation
-from parsers import LogParser, ProfileParser, get_line_time
 from datetime import datetime
 from datetime import timedelta
-import traceback
+import sys
+import time
+
+import pymongo
+from .utils import pretty_json
+from .analyzer import QueryAnalyzer, ReportAggregation
+from .parsers import LogParser, ProfileParser, get_line_time
 try:
     from collections import OrderedDict
 except ImportError:
