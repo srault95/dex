@@ -179,7 +179,7 @@ PARSER_DEFINITION ={
 ###############################################################################
 # MAIN
 ###############################################################################
-def main(args):
+def _main(args):
     # build the parse object
     darg_parser = dargparse.build_parser(PARSER_DEFINITION)
 
@@ -226,11 +226,11 @@ def main(args):
 ########################                   ####################################
 ###############################################################################
 
-if __name__ == '__main__':
+def main():
     try:
         # call main with a sub-list starting skipping the
         # command itself (which is the first arg)
-        main(sys.argv[1:])
+        _main(sys.argv[1:])
     except (SystemExit, KeyboardInterrupt) as e:
         if e.code == 0:
             pass
@@ -238,3 +238,6 @@ if __name__ == '__main__':
             raise
     except:
         traceback.print_exc()
+
+if __name__ == '__main__':
+    main()
