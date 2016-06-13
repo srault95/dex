@@ -40,7 +40,7 @@ import six
 if six.PY3:
     ljust = str.ljust
 else:
-    from string import import ljust    
+    from string import ljust    
 
 ###############################################################################
 # Constants
