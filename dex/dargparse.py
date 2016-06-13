@@ -25,13 +25,22 @@
 
 __author__ = 'abdul'
 
-import string
+from __future__ import print_function
+
 import types
 import sys
 
 from argparse import ArgumentParser
 from argparse import ArgumentError
 from argparse import HelpFormatter
+
+from six import string_types
+import six
+
+if six.PY3:
+    ljust = str.ljust
+else:
+    from string import import ljust    
 
 ###############################################################################
 # Constants
@@ -83,7 +92,7 @@ def setup_parser(parser, parser_def):
 
     if func is not None:
         # check of func is a fully qualified function name and eval it
-        if type(func) is types.StringType:
+        if type(func) is string_types:
             func = resolve_function(func)
 
         if callable(func):
@@ -212,15 +221,15 @@ class DargeParser(ArgumentParser):
 
     ###########################################################################
     def print_usage(self, file=None):
-        print self.get_usage()
+        print(self.get_usage())
 
     ###########################################################################
     def print_help(self, file=None):
-        print self.get_usage() + '\n'
-        print self.description + '\n'
-        print self.get_positionals_help()
-        print self.get_options_help()
-        print self._make_epilog()
+        print(self.get_usage() + '\n')
+        print(self.description + '\n')
+        print(self.get_positionals_help())
+        print(self.get_options_help())
+        print(self._make_epilog())
 
     ###########################################################################
     def parse_args(self, raw_args=None, namespace=None):
@@ -289,7 +298,7 @@ class DargeParser(ArgumentParser):
         def _make_child_epilog(child_def):
             child_prog = child_def["prog"]
 
-            return "%s - %s" % (string.ljust(child_prog, 25),
+            return "%s - %s" % (ljust(child_prog, 25),
                                 child_def['shortDescription'])
 
         epilog = "Commands:"

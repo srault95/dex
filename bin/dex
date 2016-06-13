@@ -231,7 +231,7 @@ if __name__ == '__main__':
         # call main with a sub-list starting skipping the
         # command itself (which is the first arg)
         main(sys.argv[1:])
-    except (SystemExit, KeyboardInterrupt) , e:
+    except (SystemExit, KeyboardInterrupt) as e:
         if e.code == 0:
             pass
         else:
